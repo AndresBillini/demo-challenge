@@ -1,6 +1,9 @@
+<!--Get the JSON and I filtered with the order token-->
+
 <div *ngFor="let reference of referenceRules | referenceFilter: id">
   <form #form="ngForm" (submit)="saveEdit()" novalidate>
     <div *ngFor="let field of reference.fields">
+      <!--Input Field-->
       <mat-form-field class="margin-right" *ngIf="checkValues('input', field.fieldValues)">
         <mat-label>
           {{field.label}}
@@ -16,6 +19,7 @@
           [required]="field.mandatory"
         >
       </mat-form-field>
+      <!--Select Field-->
       <mat-form-field *ngIf="checkValues('select', field.fieldValues)">
           <mat-label>
             {{field.label}}
@@ -30,6 +34,7 @@
           </mat-select>
       </mat-form-field>      
     </div>
+    <!--Save Button-->
     <button class="margin-top" [disabled]="form.invalid" color="primary" mat-raised-button>
       Guardar
     </button>

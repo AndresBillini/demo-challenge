@@ -14,6 +14,7 @@ export class OrderComponent implements OnInit {
   constructor(private route: ActivatedRoute, private apiService: ApiserviceService) { }
 
   ngOnInit() {
+    /* Getting Data */
     this.id = this.route.snapshot.paramMap.get('id');
     this.apiService.getJson().subscribe(info => {
       this.referenceRules = info;
@@ -21,7 +22,7 @@ export class OrderComponent implements OnInit {
   }
 
   checkValues(typeOfInput: string, values: any) {
-    
+    /* Filter of fieldValues */
     if((typeof values === 'string' || values === null) && typeOfInput === 'input'){
       return true;
     } else if(typeOfInput === 'select' && typeof values === 'object' && values !== null) {

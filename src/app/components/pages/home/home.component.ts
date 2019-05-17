@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiserviceService, private router: Router) { }
 
   ngOnInit() {
+    /* Getting data */
     this.apiService.getJson().subscribe(info => {
       this.dataSource = info;
     }, (error) => {
@@ -22,9 +23,11 @@ export class HomeComponent implements OnInit {
     });
   }
   selectRow(row) {
+    /* Router Link */
     this.router.navigate(['/order', row.token])
   }
   applyFilter(filterValue: string) {
+    /* Filter Values */
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
