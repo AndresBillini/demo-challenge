@@ -1,0 +1,34 @@
+<mat-spinner *ngIf="!dataSource && !messageError"></mat-spinner>
+<p *ngIf="messageError">
+  {{messageError}}
+</p>
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Titulo Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element">
+        <p *ngFor="let field of element.fields">
+          {{field.name}}
+        </p>
+      </td>
+    </ng-container>
+
+    <!-- Modulo Column -->
+    <ng-container matColumnDef="label">
+      <th mat-header-cell *matHeaderCellDef> Label </th>
+      <td mat-cell *matCellDef="let element"> 
+        <p *ngFor="let field of element.fields">
+          {{field.label}}
+        </p>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></tr>
+  </table>
+</div>

@@ -1,0 +1,62 @@
+[
+    {
+        "token": "001",
+        "fields": [
+            {
+                "name": "Ref1",
+                "label": "Lender",
+                "mandatory": true,
+                "fieldValues": null
+            },
+            {
+                "name": "Ref2",
+                "label": "",
+                "mandatory": true,
+                "fieldValues": [
+                "zzup01", "zzup02"
+                ]
+            },
+            {
+                "name": "Ref3",
+                "label": "Alder",
+                "mandatory": false,
+                "fieldValues": null
+            },
+            {
+                "name": "Ref4",
+                "label": "",
+                "mandatory": true,
+                "fieldValues": "UST-Global"
+            },
+            {
+                "name": "Ref5",
+                "label": "Last One",
+                "mandatory": false,
+                "fieldValues": "UST-Global"
+            }
+        ]
+    },
+    {
+        "token": "002",
+        "fields": [
+            {
+                "name": "Ref1",
+                "label": "",
+                "mandatory": false,
+                "fieldValues": null
+            },
+            {
+                "name": "Ref2",
+                "label": "",
+                "mandatory": true,
+                "fieldValues": "Apple"
+            },
+            {
+                "name": "Ref3",
+                "label": "",
+                "mandatory": false,
+                "fieldValues": null
+            }
+        ]
+    }
+]

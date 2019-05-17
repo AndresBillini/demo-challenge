@@ -1,0 +1,38 @@
+<div *ngFor="let reference of referenceRules | referenceFilter: id">
+  <form #form="ngForm" (submit)="saveEdit()" novalidate>
+    <div *ngFor="let field of reference.fields">
+      <mat-form-field class="margin-right" *ngIf="checkValues('input', field.fieldValues)">
+        <mat-label>
+          {{field.label}}
+        </mat-label>
+        <input 
+          matInput 
+          name="{{field.name}}" 
+          [(ngModel)]="field.fieldValues" 
+          value="{{field.fieldValues}}" 
+          placeholder="{{field.label}}" 
+          minlength="2"
+          maxlength="10"
+          [required]="field.mandatory"
+        >
+      </mat-form-field>
+      <mat-form-field *ngIf="checkValues('select', field.fieldValues)">
+          <mat-label>
+            {{field.label}}
+          </mat-label>
+          <mat-select [(value)]="selectOptionValues" [required]="field.mandatory">
+            <mat-option>
+              --
+            </mat-option>
+            <mat-option *ngFor="let valueInfo of field.fieldValues" [value]="valueInfo">
+              {{valueInfo}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>      
+    </div>
+    <button class="margin-top" [disabled]="form.invalid" color="primary" mat-raised-button>
+      Guardar
+    </button>
+  </form>
+ 
+</div>
