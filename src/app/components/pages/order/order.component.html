@@ -21,13 +21,13 @@
       </mat-form-field>
       <!--Select Field-->
       <mat-form-field *ngIf="checkValues('select', field.fieldValues)">
-          <mat-label>
+          <mat-label *ngIf="field.label">
             {{field.label}}
           </mat-label>
+          <mat-label *ngIf="!field.label">
+            --
+          </mat-label>
           <mat-select [(value)]="selectOptionValues" [required]="field.mandatory">
-            <mat-option>
-              --
-            </mat-option>
             <mat-option *ngFor="let valueInfo of field.fieldValues" [value]="valueInfo">
               {{valueInfo}}
             </mat-option>

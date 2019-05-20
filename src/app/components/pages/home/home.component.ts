@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from 'src/app/services/api.service';
-import { MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     /* Getting data */
-    this.apiService.getJson().subscribe(info => {
+    this.apiService.getData().subscribe(info => {
       this.dataSource = info;
     }, (error) => {
       this.messageError = error.message;

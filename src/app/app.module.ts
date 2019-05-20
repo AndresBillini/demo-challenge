@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderComponent } from './components/pages/order/order.component';
 import { referenceFilterPipe } from './filters/reference.pipe';
 import { ApiserviceService } from './services/api.service';
-import { ApiInterceptorService } from './services/apiinterceptor.service';
+import { ApiInterceptorService } from './interceptors/ApiInterceptorService';
 
 @NgModule({
   declarations: [

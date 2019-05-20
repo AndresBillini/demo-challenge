@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlJson: './assets/json/referenceRules.json',
+  pokemonApi: 'https://pokeapi.co/api/v2/pokemon/1'
 };
 
 /*

@@ -16,8 +16,12 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
     /* Getting Data */
     this.id = this.route.snapshot.paramMap.get('id');
-    this.apiService.getJson().subscribe(info => {
+    this.apiService.getData(this.id).subscribe(info => {
       this.referenceRules = info;
+      console.log(info);
+    });
+    this.apiService.getPokemons().subscribe(info => {
+      console.log(info);
     });
   }
 
